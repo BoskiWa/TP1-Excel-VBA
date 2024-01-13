@@ -1,25 +1,15 @@
-Sub DemanderValeurUtilisateur()
-    ' Déclaration de variables
-    Dim valeurUtilisateur As Variant
-    Dim messageInputBox As String
-    Dim titreInputBox As String
+Sub ManipulerCelluleActive()
+
+    ' Mettre la valeur "Hello World" dans la cellule active
+    ActiveCell.Value = "Hello World"
     
-    ' Définition du message et du titre de l'InputBox
-    messageInputBox = "Tape une valeur entre 1 et 100"
-    titreInputBox = "Entrer une valeur"
+    'Afficher le contenu de la cellule active dans une boite de message
+    MsgBox "Contenu de la cellule active : " & ActiveCell.Value
     
-    ' Affichage de l'InputBox dans le coin supérieur gauche de l'écran
-    valeurUtilisateur = InputBox(messageInputBox, titreInputBox, , 0, 0)
+    'Effacer le contenue de la cellule active
+    ActiveCell.ClearContents
     
-    ' Vérification de la validité de la valeur
-    If IsNumeric(valeurUtilisateur) Then
-        If valeurUtilisateur >= 1 And valeurUtilisateur <= 100 Then
-            ' Affichage du résultat
-            MsgBox "Vous avez entré la valeur : " & valeurUtilisateur
-        Else
-            MsgBox "La valeur doit être comprise entre 1 et 100. Veuillez réessayer.", vbExclamation
-        End If
-    Else
-        MsgBox "Veuillez entrer une valeur numérique. Veuillez réessayer.", vbExclamation
-    End If
+    'Afficher a nouveau le contenu de la cellule active (apres avoirr efface son contenu)
+    MsgBox "Nouveau contenu de la cellule active : " & ActiveCell.Value
+    
 End Sub
