@@ -1,0 +1,33 @@
+Function TotalAPayer(quantite As Integer, prixHT As Double, port As Double) As Variant
+    Dim totalSansRemise As Double
+    Dim remise As Double
+    Dim totalAvecRemise As Double
+    
+    ' Calcul du total sans remise
+    totalSansRemise = (quantite * prixHT) + port
+    
+    ' Calcul de la remise en fonction de la quantité
+    Select Case quantite
+        Case 1
+            remise = 0 ' Pas de remise pour 1 pièce
+        Case 2 To 10
+            remise = totalSansRemise * 0.01 ' Remise de 1% pour 2 à 10 pièces
+        Case 11 To 20
+            remise = totalSansRemise * 0.05 ' Remise de 5% pour 11 à 20 pièces
+        Case 21 To 30
+            remise = totalSansRemise * 0.1 ' Remise de 10% pour 21 à 30 pièces
+        Case 31 To 40
+            remise = totalSansRemise * 0.15 ' Remise de 15% pour 31 à 40 pièces
+        Case 41 To 50
+            remise = totalSansRemise * 0.2 ' Remise de 20% pour 41 à 50 pièces
+        Case Is > 50
+            TotalAPayer = "Erreur dans la quantité" ' Si commande supérieure à 50 pièces, retourne un message d'erreur
+            Exit Function
+    End Select
+    
+    ' Calcul du total avec remise
+    totalAvecRemise = totalSansRemise - remise
+    
+    ' Retourne le total à payer
+    TotalAPayer = totalAvecRemise
+End Function
