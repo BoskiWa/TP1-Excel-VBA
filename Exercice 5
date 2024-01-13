@@ -1,0 +1,12 @@
+Sub Bonjour()
+'
+' Boujour Macro
+'
+
+'
+    
+        If MsgBox("Bonjour", vbOKOnly, "MessageVBA") = vbOK Then
+    
+    End If
+    
+End Sub
