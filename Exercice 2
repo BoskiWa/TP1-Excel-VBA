@@ -1,10 +1,12 @@
-Sub GrasItalique()
+Sub Relatif()
 '
-' GrasItalique Macro
+' Relatif Macro
 '
 
 '
-    With Selection.Font
-        .FontStyle = "Gras italique"
-    End With
+    Range("A1").Select
+    ActiveCell.FormulaR1C1 = "5"
+    Range("A3").Select
+    ActiveCell.FormulaR1C1 = "6"
+    Range("A4").Select
 End Sub
