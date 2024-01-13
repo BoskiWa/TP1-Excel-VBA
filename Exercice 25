@@ -1,0 +1,10 @@
+Sub RenommerFeuilles()
+
+    Dim i As Integer
+    
+    ' Boucle pour parcourir toutes les feuilles du classeur actif
+    For i = 1 To ThisWorkbook.Sheets.Count
+        ThisWorkbook.Sheets(i).Name = i ' Renommer la feuille en utilisant le numéro
+    Next i
+    
+End Sub
