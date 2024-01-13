@@ -1,0 +1,25 @@
+Sub DemanderValeurUtilisateur()
+    ' Déclaration de variables
+    Dim valeurUtilisateur As Variant
+    Dim messageInputBox As String
+    Dim titreInputBox As String
+    
+    ' Définition du message et du titre de l'InputBox
+    messageInputBox = "Tape une valeur entre 1 et 100"
+    titreInputBox = "Entrer une valeur"
+    
+    ' Affichage de l'InputBox dans le coin supérieur gauche de l'écran
+    valeurUtilisateur = InputBox(messageInputBox, titreInputBox, , 0, 0)
+    
+    ' Vérification de la validité de la valeur
+    If IsNumeric(valeurUtilisateur) Then
+        If valeurUtilisateur >= 1 And valeurUtilisateur <= 100 Then
+            ' Affichage du résultat
+            MsgBox "Vous avez entré la valeur : " & valeurUtilisateur
+        Else
+            MsgBox "La valeur doit être comprise entre 1 et 100. Veuillez réessayer.", vbExclamation
+        End If
+    Else
+        MsgBox "Veuillez entrer une valeur numérique. Veuillez réessayer.", vbExclamation
+    End If
+End Sub
