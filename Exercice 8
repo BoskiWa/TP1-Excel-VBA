@@ -1,0 +1,29 @@
+Sub AdditionNombre()
+    Dim nombre As Integer
+    Dim somme As Integer
+    Dim userInput As String
+
+    somme = 0
+
+    Do
+        userInput = InputBox("Veuillez entrer un nombre entre 1 et 10", "Entrée de nombre")
+
+        If IsNumeric(userInput) Then
+            nombre = CInt(userInput)
+            If nombre >= 1 And nombre <= 10 Then
+                somme = somme + nombre
+                MsgBox "Nombre saisi : " & nombre & vbCrLf & "Somme actuelle : " & somme, vbInformation, "Résultat"
+            Else
+                MsgBox "Veuillez entrer un nombre entre 1 et 10.", vbExclamation, "Erreur"
+            End If
+        Else
+            If userInput <> "" Then
+                MsgBox "Veuillez entrer un nombre valide.", vbExclamation, "Erreur"
+            Else
+                Exit Sub ' Si l'utilisateur clique sur Annuler, sortir de la boucle
+            End If
+        End If
+
+    Loop
+
+End Sub
