@@ -1,0 +1,9 @@
+Sub ChercherErreur()
+'
+' ChercherErreur Macro
+'
+
+    MsgBox "Voici un nouveau message"
+
+'
+End Sub
