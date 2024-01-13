@@ -1,0 +1,14 @@
+Sub OuvrirFichierExcel()
+    Dim chemin As Variant
+
+    ' Afficher une boîte de dialogue pour choisir un fichier
+    chemin = Application.GetOpenFilename("Fichiers Excel (*.xls; *.xlsx), *.xls; *.xlsx", Title:="Ouvrir fichier")
+
+    ' Vérifier si l'utilisateur a sélectionné un fichier
+    If chemin <> False Then
+        ' Ouvrir le fichier sélectionné
+        Workbooks.Open chemin
+    Else
+        MsgBox "Aucun fichier sélectionné."
+    End If
+End Sub
