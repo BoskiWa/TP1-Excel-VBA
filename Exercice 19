@@ -1,0 +1,18 @@
+Sub ColorierSelonA1()
+    Dim couleurA1 As Long
+    
+    ' Récupère la couleur intérieure de la cellule A1 de la feuille active
+    couleurA1 = ActiveSheet.Range("A1").Interior.Color
+    
+    ' Vérifie la couleur de la cellule A1 et applique la couleur à toute la feuille
+    Select Case couleurA1
+        Case RGB(255, 0, 0) ' Rouge
+            ActiveSheet.Cells.Interior.Color = RGB(255, 0, 0) ' Rouge
+        Case RGB(0, 255, 0) ' Vert
+            ActiveSheet.Cells.Interior.Color = RGB(0, 255, 0) ' Vert
+        Case RGB(0, 0, 255) ' Bleu
+            ActiveSheet.Cells.Interior.Color = RGB(0, 0, 255) ' Bleu
+        Case Else ' Aucune de ces couleurs
+            ActiveSheet.Cells.Interior.Color = RGB(255, 255, 0) ' Jaune
+    End Select
+End Sub
