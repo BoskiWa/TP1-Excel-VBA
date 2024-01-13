@@ -1,0 +1,20 @@
+Sub RemplirFeuilleCharleroi()
+    Dim feuille As Worksheet
+    Dim i As Integer
+    
+    ' Activer la feuille "Charleroi"
+    Set feuille = ThisWorkbook.Sheets("Charleroi")
+    feuille.Activate
+    
+    ' Sélectionner la cellule E5
+    feuille.Range("E5").Select
+    
+    ' Boucle pour remplir les cellules de la colonne E de la ligne 5 à la ligne 1004
+    For i = 1 To 1000
+        ' Écrire dans la cellule sélectionnée
+        ActiveCell.Value = "Je suis dans la cellule " & i & " de la colonne E"
+        
+        ' Descendre d'une cellule
+        ActiveCell.Offset(1, 0).Select
+    Next i
+End Sub
