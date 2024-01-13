@@ -1,0 +1,14 @@
+Sub CirconférenceCerclePI()
+'
+' CirconférenceCerclePI Macro
+'
+
+Function CalculerCirconferencePI(diametre As Double) As Double
+
+Dim Pi As Double
+Pi = 3.14
+
+    ' Calcul de la circonférence
+    CalculerCirconferencePI = diametre * Pi
+    
+End Function
