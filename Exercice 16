@@ -1,0 +1,9 @@
+Sub VerifierCelluleA1()
+    ' Vérifie si la cellule A1 de la feuille active est vide
+    If ActiveSheet.Range("A1").Value = "" Then
+        ' Émet un bip sonore
+        Beep
+        ' Affiche un message dans une boîte de dialogue sans titre
+        MsgBox "Pas de Titre", vbOKOnly, ""
+    End If
+End Sub
