@@ -1,0 +1,26 @@
+Sub StatistiquesPlage()
+    Dim plage As Range
+
+    ' Demander à l'utilisateur de sélectionner une plage
+    On Error Resume Next
+    Set plage = Application.InputBox("Sélectionnez une plage de cellules", Type:=8)
+    ' Le paramètre Type:=8 spécifie que la fonction InputBox doit renvoyer un objet de type Range (plage de cellules)
+    On Error GoTo 0
+
+    ' Vérifier si l'utilisateur a annulé la sélection
+    If plage Is Nothing Then
+        MsgBox "Aucune plage sélectionnée."
+    Else
+        ' Calculer la moyenne, le maximum et le minimum
+        Dim Moyenne As Double
+        Dim Maximum As Double
+        Dim Minimum As Double
+
+        Moyenne = Application.WorksheetFunction.Average(plage)
+        Maximum = Application.WorksheetFunction.Max(plage)
+        Minimum = Application.WorksheetFunction.Min(plage)
+
+        ' Afficher les résultats dans une boîte de dialogue
+        MsgBox "Moyenne : " & Moyenne & vbCrLf & "Maximum : " & Maximum & vbCrLf & "Minimum : " & Minimum
+    End If
+End Sub
