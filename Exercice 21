@@ -1,0 +1,24 @@
+Sub SommeJusqua1000()
+    Dim somme As Double
+    Dim nombre As Variant
+    
+    ' Initialisation de la somme
+    somme = 0
+    
+    ' Tant que la somme est inférieure à 1000
+    Do While somme < 1000
+        ' Demander à l'utilisateur de taper un nombre
+        nombre = InputBox("Tapez un nombre de 3 chiffres maximum :")
+        
+        ' Vérifier si l'utilisateur a appuyé sur Annuler ou n'a rien entré
+        If nombre = "" Then
+            Exit Sub ' Sortir de la procédure si l'utilisateur annule
+        End If
+        
+        ' Convertir le nombre en valeur numérique et l'ajouter à la somme
+        somme = somme + Val(nombre)
+    Loop
+    
+    ' Afficher la somme atteinte
+    MsgBox "La somme des nombres est : " & somme
+End Sub
