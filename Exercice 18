@@ -1,0 +1,16 @@
+Sub MettreEnFormeCelluleA1CorrectionSiVide()
+    ' Vérifie si la cellule A1 de la feuille active n'est pas vide
+    If ActiveSheet.Range("A1").Value <> "" Then
+        ' Met en forme le contenu de la cellule A1 en gras, souligné et rouge
+        With ActiveSheet.Range("A1").Font
+            .Bold = True
+            .Underline = True
+            .Color = RGB(255, 0, 0) ' Rouge
+        End With
+    Else
+        ' Émet un bip sonore
+        Beep
+        ' Affiche un message dans une boîte de dialogue sans titre
+        MsgBox "Pas de Titre", vbOKOnly, ""
+    End If
+End Sub
