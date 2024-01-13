@@ -1,0 +1,6 @@
+Sub AfficherValeurCelluleActive()
+
+    ' Afficher la valeur de la cellule active dans une boîte de message
+    MsgBox "La valeur de la cellule active est : " & ActiveCell.Value
+    
+End Sub
