@@ -1,0 +1,10 @@
+Sub CirconférenceCercle()
+'
+' CirconférenceCercle Macro
+'
+
+Function CalculerCirconference(diametre As Double) As Double
+    ' Calcul de la circonférence
+    CalculerCirconference = diametre * 3.14
+    
+End Function
