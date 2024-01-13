@@ -1,0 +1,16 @@
+Sub SaisieDateValide()
+    Dim userInput As Variant
+    
+    ' Boucle pour demander à l'utilisateur de saisir une date valide
+    Do
+        ' Demander à l'utilisateur de saisir une date
+        userInput = InputBox("Veuillez saisir une date (format JJ/MM/AAAA) :")
+        
+        ' Vérifier si la saisie est une date valide
+        If IsDate(userInput) Then
+            Exit Sub ' Sortir de la boucle si la saisie est une date valide
+        Else
+            MsgBox "Saisie invalide. Veuillez saisir une date au format JJ/MM/AAAA.", vbExclamation
+        End If
+    Loop
+End Sub
